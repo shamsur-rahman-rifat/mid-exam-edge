@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>StudentHub — Home</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/home.css"/>
+  <link rel="icon" href="https://images.unsplash.com/photo-1593882100241-aef1449fe351" type="image/x-icon"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVBAR
+══════════════════════════════════ -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container-xl">
+
+    <a class="navbar-brand" href="index.html">
+      StudentHub <span class="brand-badge">Beta</span>
+    </a>
+
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse" data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto gap-1">
+        <li class="nav-item">
+          <a class="nav-link" id="nav-home" href="index.html">
+            <i class="bi bi-house"></i> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-add" href="pages/add-student.html">
+            <i class="bi bi-person-plus"></i> Add Student
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="nav-view" href="pages/view-students.html">
+            <i class="bi bi-table"></i> View Students
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+<!-- /NAVBAR -->
+
+
+<!-- ══════════════════════════════════
+     HERO SECTION
+══════════════════════════════════ -->
+<section class="hero">
+
+  <div class="hero-eyebrow">
+    <i class="bi bi-mortarboard-fill"></i>
+    Student Management System
+  </div>
+
+  <h1>
+    Manage Your Students<br/>
+    with <span class="highlight">Confidence</span>
+  </h1>
+
+  <p class="hero-desc">
+    A clean, fast, and fully local student registry.<br/>
+    Add records, search them, and keep everything in order.
+  </p>
+
+  <div class="hero-actions">
+    <a href="pages/add-student.html" class="btn-hero-primary">
+      <i class="bi bi-person-plus-fill"></i> Add Student
+    </a>
+    <a href="pages/view-students.html" class="btn-hero-ghost">
+      <i class="bi bi-table"></i> View Students
+    </a>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-number" id="heroCount">0</div>
+      <div class="stat-text">STUDENTS REGISTERED</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">100%</div>
+      <div class="stat-text">LOCAL STORAGE</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-number">3</div>
+      <div class="stat-text">PAGES</div>
+    </div>
+  </div>
+
+</section>
+<!-- /HERO -->
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Storage utility (to read count) -->
+<script src="js/storage.js"></script>
+<!-- Navbar active link -->
+<script src="js/navbar.js"></script>
+
+<script>
+  // Show live student count in hero
+  document.getElementById('heroCount').textContent = getStudents().length;
+</script>
+
+</body>
+</html>
